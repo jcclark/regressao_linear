@@ -2,8 +2,6 @@ import csv
 import math
 from random import randint
 import matplotlib.pyplot as plt
-import numpy as np
-
 
 
 def modelo( data, tipo, i):
