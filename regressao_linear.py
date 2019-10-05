@@ -12,7 +12,6 @@ def modelo( data, tipo, i):
     b_0, b_1 = regressao_linear(b_treino, tipo)
     x = [d[0] for d in dados]
     y = [(b_0 + (d[0] * b_1)) for d in dados]
-    print(sorted(set(w)))
     desvio = desvio_padrao(b_teste, b_0, b_1)
     print("Desvio padrão: " + str( round(desvio, 2) ))
     plt.title('Média Provas x ' + tipo )
@@ -39,7 +38,6 @@ def regressao_linear( b_treino, type):
     x1 = somatorio(b_treino, 'x2')
     b_1 = ((x * y) - (N * xy)) / ((x ** 2) - (N * x1))
     b_0 = (y - (b_1 * x))/ N
-    print(type + ": y = " + str( round(b_0, 2)) + " + " + str(round(b_1, 2)) + "x")
     return b_0, b_1
 
 def somatorio( l_n, tipo):
